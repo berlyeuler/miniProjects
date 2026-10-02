@@ -1,0 +1,202 @@
+body {
+  background-color: #fce4ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+#game-container {
+  position: relative;
+  width: 90vw;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  background-color: #87ceeb;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* UI Bar: Skor ve Mağaza Butonu */
+#ui-bar {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+#score-board {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 18px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#shop-btn {
+  font-size: 18px;
+  font-weight: bold;
+  background: #ff80ab;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+#shop-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Modallar (Soru ve Mağaza Panelleri) */
+#quiz-modal, #shop-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 25px 35px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  z-index: 20;
+  min-width: 300px;
+}
+
+.option-btn {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  background-color: #f8bbd0;
+  color: #880e4f;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.option-btn:hover {
+  background-color: #f48fb1;
+}
+
+.shop-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+  padding: 10px 15px;
+  background: #f1f8e9;
+  border-radius: 12px;
+}
+
+.shop-item button {
+  background: #7cb342;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn {
+  margin-top: 15px;
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  background: #c62828;
+}
+
+.word-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.word-header h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #333;
+}
+
+#audio-btn {
+  background: #ab47bc;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+#audio-btn:hover {
+  background: #8e24aa;
+  transform: scale(1.05);
+}
+
+.shop-list {
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.shop-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.shop-list::-webkit-scrollbar-thumb {
+  background: #ff80ab;
+  border-radius: 10px;
+}
+
+#timer-board {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 18px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#timer-board small {
+  color: #d81b60;
+}

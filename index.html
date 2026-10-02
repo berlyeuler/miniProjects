@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Kedi Kelime Macera</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <!-- Üst UI Bar -->
+    <div id="ui-bar">
+      <div id="score-board">Puan: <span id="score-text">0</span></div>
+      <div id="timer-board">⏱️ Süre: <span id="timer-text">00:00</span> <small>(Seviye <span id="level-text">1</span>)</small></div>
+      <button id="shop-btn" onclick="toggleShop()">🛍️ Mağaza</button>
+    </div>
+
+    <!-- Oyun Tuvali -->
+    <canvas id="gameCanvas" width="1000" height="500"></canvas>
+    
+    <!-- Kelime Sorusu Paneli -->
+    <div id="quiz-modal" class="hidden">
+      <div class="word-header">
+        <h2 id="english-word">Apple</h2>
+        <button id="audio-btn" onclick="speakCurrentWord()">🔊 Dinle</button>
+      </div>
+      <div id="options-container"></div>
+    </div>
+
+    <!-- Mağaza Paneli -->
+    <div id="shop-modal" class="hidden">
+      <h2>🐾 Kostüm Mağazası</h2>
+      <div class="shop-list">
+        <div class="shop-item"><span>Klasik Kedi (0)</span><button onclick="selectSkin('default')">Giydir</button></div>
+        <div class="shop-item"><span>Cadı (30)</span><button id="btn-witch" onclick="buyOrSelectSkin('witch', 30)">Satın Al</button></div>
+        <div class="shop-item"><span>Korsan (50)</span><button id="btn-pirate" onclick="buyOrSelectSkin('pirate', 50)">Satın Al</button></div>
+        <div class="shop-item"><span>Ninja (70)</span><button id="btn-ninja" onclick="buyOrSelectSkin('ninja', 70)">Satın Al</button></div>
+        <div class="shop-item"><span>Astronot (100)</span><button id="btn-astronaut" onclick="buyOrSelectSkin('astronaut', 100)">Satın Al</button></div>
+        <div class="shop-item"><span>Süper Kahraman (130)</span><button id="btn-superhero" onclick="buyOrSelectSkin('superhero', 130)">Satın Al</button></div>
+        <div class="shop-item"><span>Kral (160)</span><button id="btn-king" onclick="buyOrSelectSkin('king', 160)">Satın Al</button></div>
+        <div class="shop-item"><span>Dedektif (190)</span><button id="btn-detective" onclick="buyOrSelectSkin('detective', 190)">Satın Al</button></div>
+        <div class="shop-item"><span>Aşçı (220)</span><button id="btn-chef" onclick="buyOrSelectSkin('chef', 220)">Satın Al</button></div>
+        <div class="shop-item"><span>Dinozor (250)</span><button id="btn-dino" onclick="buyOrSelectSkin('dino', 250)">Satın Al</button></div>
+        <div class="shop-item"><span>Büyücü (280)</span><button id="btn-wizard" onclick="buyOrSelectSkin('wizard', 280)">Satın Al</button></div>
+        <div class="shop-item"><span>Robot (310)</span><button id="btn-robot" onclick="buyOrSelectSkin('robot', 310)">Satın Al</button></div>
+        <div class="shop-item"><span>Melek (350)</span><button id="btn-angel" onclick="buyOrSelectSkin('angel', 350)">Satın Al</button></div>
+      </div>
+      <button class="close-btn" onclick="toggleShop()">Kapat</button>
+    </div>
+  </div>
+
+  <script src="words.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
